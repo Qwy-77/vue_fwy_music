@@ -17,11 +17,11 @@ module.exports = {
       alias: {
         components: "@/components",
         // content: "components/content",
-        common: "components/common",
+        common: "@/common",
         assets: "@/assets",
         api: "@/api",
-        views: "@/views",
-      },
-    },
-  },
+        views: "@/views"
+      }
+    }
+  }
 };
