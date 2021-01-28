@@ -7,6 +7,8 @@ const Singer = () => import("views/singer/Singer");
 const Video = () => import("views/video/Video");
 const MV = () => import("views/MV/Mv");
 
+const Login = () => import("components/content/login/Login");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -43,6 +45,11 @@ const routes = [
     path: "/mv",
     name: "MV",
     component: MV
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login
   }
 ];
 

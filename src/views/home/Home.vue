@@ -26,7 +26,7 @@ export default {
     // 1 请求轮播图数据
     getBanner() {
       getBanner().then((res) => {
-        console.log(res);
+        // console.log(res);
         this.banners = res.data.banners;
       });
     },

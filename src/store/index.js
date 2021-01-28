@@ -1,15 +1,32 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+import mutations from "./mutations";
+import actions from "./actions";
+import getters from "./getters";
+import modulesA from "./modules/modulesA";
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+// 1. 安装插件
+Vue.use(Vuex);
+
+// 2.创建对象
+const state = {
+  // 登录状态
+  loginStatu: null,
+  //用户信息
+  userInfo: null
+};
+const store = new Vuex.Store({
+  state,
+  mutations,
+  actions,
+  getters,
   modules: {
+    a: modulesA
   }
-})
+});
+
+// 3.导出插件
+export default store;
+
+// new Vue({});
