@@ -6,3 +6,13 @@ export function getBanner() {
     url: "/banner"
   });
 }
+
+//获取 推荐歌单
+export function getPersonalized(token) {
+  return request({
+    url: "/personalized",
+    params: {
+      token
+    }
+  });
+}

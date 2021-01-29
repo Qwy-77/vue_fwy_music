@@ -15,12 +15,12 @@
       <div class="content-right">
         <i class="el-icon-search"></i>
         <span class="right-sod"></span>
-        <div class="content-user" v-if="$store.state.loginStatu">
+        <div class="content-user" v-if="loginStatu">
           <span class="img">
-            <img :src="$store.state.userInfo.avatarUrl" alt="" />
+            <img :src="userInfo.avatarUrl" alt="" />
           </span>
           <span
-            >{{ $store.state.userInfo.nickname }}
+            >{{ userInfo.nickname }}
             <i class="el-icon-arrow-down" @click="modeClick"></i>
           </span>
         </div>
@@ -49,7 +49,7 @@
                 个人设置
               </router-link>
             </li>
-            <li class="tab-user-item">
+            <li class="tab-user-item" @click="logout">
               <router-link to="/">
                 <i class="el-icon-switch-button"></i>
                 退出登录
@@ -63,6 +63,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { getStatus, logout, logoutRefresh } from "api/login/login";
 export default {
   name: "TabBar",
   data() {
@@ -80,12 +82,21 @@ export default {
     modeClick() {
       this.show = !this.show;
     },
+    // 退出登录
+    logout() {
+      window.localStorage.removeItem("loginStatu");
+      window.localStorage.removeItem("userInfo");
+      this.modeClick();
+    },
   },
   computed: {
     isShow() {
       // 如果是登录页面就隐藏导航
       return this.$route.path.indexOf("/login");
     },
+
+    // 获取 stote 里面数据信息
+    ...mapGetters(["loginStatu", "userInfo"]),
   },
 };
 </script>
@@ -208,5 +219,8 @@ export default {
   border: 1px solid #ebeef5;
   top: -8px;
   left: -25px;
+}
+.tab-user a {
+  outline: none;
 }
 </style>

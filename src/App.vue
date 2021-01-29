@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TabBar></TabBar>
+    <TabBar class="tabbar"></TabBar>
     <router-view></router-view>
   </div>
 </template>
@@ -17,4 +17,7 @@ export default {
 
 <style scoped>
 @import "assets/css/base.css";
+.tabbar {
+  background-color: rgb(168, 120, 128);
+}
 </style>

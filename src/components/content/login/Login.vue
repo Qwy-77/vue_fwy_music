@@ -63,7 +63,6 @@ export default {
           if (res.data.code === 200) {
             // 用户登录成功后就调用此方法来获取用户信息
             this.getUserDetail(res.data.profile.userId);
-            console.log(res);
             // 保存 token
             window.localStorage.setItem("token", res.data.token);
             window.localStorage.setItem("cokie", res.data.cookie);
