@@ -29,6 +29,6 @@ export default {
 
 <style scoped>
 .HomeSwiper {
-  padding: 20px;
+  margin-top: 20px;
 }
 </style>

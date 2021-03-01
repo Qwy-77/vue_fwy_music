@@ -16,3 +16,10 @@ export function getPersonalized(token) {
     }
   });
 }
+
+// 获取推荐新歌 歌曲
+export function getNewSong() {
+  return request({
+    url: "/personalized/newsong"
+  });
+}

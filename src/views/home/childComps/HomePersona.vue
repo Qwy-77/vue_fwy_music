@@ -40,13 +40,13 @@ export default {
 
 <style  scoped>
 .PersonalizedItem {
-  margin: 10px 15px 60px;
+  margin: 10px 15px 60px 0;
 }
 .persona-title {
   color: #4a4a4a;
   font-size: 16px;
   font-weight: 700;
-  margin-left: 15px;
+  margin-top: 10px;
 }
 .item-img img {
   width: 100%;
